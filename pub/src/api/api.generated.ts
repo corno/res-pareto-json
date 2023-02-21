@@ -4,10 +4,10 @@ import * as glo from "./glossary"
 
 import * as mcommon from "glo-pareto-common"
 
-export type CconvertJSON = ($d: {
+export type CcreateJSONConverter = ($d: {
     readonly 'convert': glo.FConvert
 }) => glo.FConvertJSON
 
 export type API = {
-    convertJSON: CconvertJSON
+    createJSONConverter: CcreateJSONConverter
 }

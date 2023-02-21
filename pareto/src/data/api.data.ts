@@ -26,7 +26,7 @@ export const $: mmoduleDefinition.T.ModuleDefinition<pd.SourceLocation> = {
             "common": "glo-pareto-common",
         }),
         'algorithms': d({
-            "convertJSON": algorithm(definitionReference("ConvertJSON"), constructor(null, {
+            "createJSONConverter": algorithm(definitionReference("ConvertJSON"), constructor(null, {
                 "convert": definitionReference("Convert"),
             }))
 

@@ -3,7 +3,7 @@ import * as pt from 'pareto-core-types'
 
 import * as api from "../api"
 
-export const $$: api.CconvertJSON = ($d) => {
+export const $$: api.CcreateJSONConverter = ($d) => {
     return <T>($: string) => {
         try {
             const json = JSON.parse($)

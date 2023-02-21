@@ -1,6 +1,7 @@
 
 import * as ps from 'pareto-core-state'
 import * as pl from 'pareto-core-lib'
+import * as pd from 'pareto-core-dev'
 
 import * as mtest from "lib-pareto-test"
 
@@ -13,14 +14,14 @@ export const $$: api.CgetTestSet = () => {
 
     type Foo = number
 
-    const result = pub.$a.convertJSON<Foo>({
-        'convert': ($: pub.T.JSONValue<Foo>) => {
+    const result = pub.$a.convertJSON({
+        'convert': ($) => {
             return $.number()
         }
     })(`42`)
 
     if (result[0] === true) {
-        pl.logDebugMessage(`>>>>${result[1]}`)
+        pd.logDebugMessage(`>>>>${result[1]}`)
     }
 
 
