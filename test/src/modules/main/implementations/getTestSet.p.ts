@@ -14,11 +14,13 @@ export const $$: api.CgetTestSet = () => {
 
     type Foo = number
 
-    const result = pub.$a.convertJSON({
+    const convertJSON = pub.$a.createJSONConverter({
         'convert': ($) => {
             return $.number()
         }
-    })(`42`)
+    })
+
+    const result = convertJSON(`42`)
 
     if (result[0] === true) {
         pd.logDebugMessage(`>>>>${result[1]}`)
