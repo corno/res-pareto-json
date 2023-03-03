@@ -1,6 +1,6 @@
-import { API } from "./api"
+import { API } from "./definition/api.generated"
 import { $$ as icreateJSONConverter } from "./implementations/createJSONConverter.native"
 
-export const $a: API = {
+export const $r: API = {
     'createJSONConverter': icreateJSONConverter,
 }

@@ -15,11 +15,8 @@ import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossa
 const d = pd.d
 
 export const $: mglossary.T.Glossary<string> = {
-    'imports': d({
-        "common": "glo-pareto-common",
-    }),
     'parameters': d({
-        "Type": {},
+        "Type": null,
     }),
     'types': d({
         "PossibleResult": type(optional(glossaryParameter("Type"))),

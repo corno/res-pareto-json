@@ -4,7 +4,10 @@ import * as mproject from "lib-pareto-typescript-project/dist/submodules/project
 
 const d = pd.d
 
+import { external, sibling, this_ } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
+
 import { $ as api } from "./api.data"
+import { $ as glossary } from "./glossary.data"
 
 export const $: mproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
@@ -12,24 +15,38 @@ export const $: mproject.T.Project<pd.SourceLocation> = {
     'license': "TBD",
     
     'dependencies': d({
-        "glo-pareto-common": {},
+        "glo-pareto-common": null,
     }),
     'type': ['resource', {
-        'definition': api,
+        'definition': {
+            'glossary': {
+                'root': glossary,
+                'imports': d({
+                    "common": external("glo-pareto-common"),
+                }),
+            },
+            'api': {
+                'root': api,
+                'imports': d({
+                    "common": external("glo-pareto-common"),
+                    "this":this_(),
+                }),
+            }
+        },
         'nativeDependencies': d({}),
         'devDependencies': d({
-            "@types/node": {},
+            "@types/node": null,
         }),
         'test': {
             'dependencies': d({
             }),
             'glossary': {
                 'functions': d({}),
-                'imports': d({}),
                 'parameters': d({}),
                 'types': d({}),
                 'interfaces': d({}),
             },
+            'imports': d({}),
         }
     }],
 }
