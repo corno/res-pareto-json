@@ -1,9 +1,16 @@
 import * as pt from 'pareto-core-types'
 
-import { T   } from './types.generated'
+import { T } from './types.generated'
 
-import * as gcommon from "glo-pareto-common"
+import * as g_common from "glo-pareto-common"
 
-export type FConvert = <GPType>($: T.JSONValue<GPType>,) => T.Result<GPType>
+export namespace I {}
 
-export type FConvertJSON = <GPType>($: gcommon.T.String,) => T.PossibleResult<GPType>
+export namespace B {}
+
+export namespace F {
+    
+    export type Convert = <GType>($: T.JSONValue<GType>,) => T.Result<GType>
+    
+    export type ConvertJSON = <GType>($: g_common.T.String,) => T.PossibleResult<GType>
+}

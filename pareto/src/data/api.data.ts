@@ -9,6 +9,6 @@ export const $: gapi.T.API<pd.SourceLocation> = {
     'algorithms': d({
         "createJSONConverter": algorithm(functionReference("this", {}, "ConvertJSON"), constructor(null, {
             "convert": functionReference("this", {}, "Convert"),
-        }))
-    })
+        })),
+    }),
 }

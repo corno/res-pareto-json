@@ -7,7 +7,7 @@ import {
     reference,
     boolean,
     typeReference,
-    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method, type, number, glossaryParameter, optional, computed
+    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, type, number, glossaryParameter, optional, computed
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -28,12 +28,13 @@ export const $: mglossary.T.Glossary<string> = {
             "number": member(computed(number())),
             "boolean": member(computed(boolean())),
             "isNull": member(boolean()),
-        }))
+        })),
     }),
+    'builders': d({}),
     'interfaces': d({
     }),
     'functions': d({
         "ConvertJSON": func(typeReference("common", "String"), null, null, data(typeReference("PossibleResult"), false)),
-        "Convert": func(typeReference("JSONValue"), null, null, data(typeReference("Result"), false))
+        "Convert": func(typeReference("JSONValue"), null, null, data(typeReference("Result"), false)),
     }),
 }

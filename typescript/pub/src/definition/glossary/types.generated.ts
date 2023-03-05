@@ -1,6 +1,6 @@
 import * as pt from 'pareto-core-types'
 
-import * as gcommon from "glo-pareto-common"
+import * as g_common from "glo-pareto-common"
 
 export namespace T {
     
@@ -10,65 +10,65 @@ export namespace T {
             
             export namespace C {
                 
-                export type A<GPType> = T.JSONValue<GPType>
+                export type A<GType> = T.JSONValue<GType>
             }
             
-            export type C<GPType> = pt.Array<T.JSONValue<GPType>>
+            export type C<GType> = pt.Array<T.JSONValue<GType>>
         }
         
-        export type array<GPType> = () => pt.Array<T.JSONValue<GPType>>
+        export type array<GType> = () => pt.Array<T.JSONValue<GType>>
         
         export namespace _lboolean {
             
-            export type C<GPType> = boolean
+            export type C<GType> = boolean
         }
         
-        export type _lboolean<GPType> = () => boolean
+        export type _lboolean<GType> = () => boolean
         
-        export type isNull<GPType> = boolean
+        export type isNull<GType> = boolean
         
         export namespace _lnumber {
             
-            export type C<GPType> = number
+            export type C<GType> = number
         }
         
-        export type _lnumber<GPType> = () => number
+        export type _lnumber<GType> = () => number
         
         export namespace _lobject {
             
             export namespace C {
                 
-                export type D<GPType> = T.JSONValue<GPType>
+                export type D<GType> = T.JSONValue<GType>
             }
             
-            export type C<GPType> = pt.Dictionary<T.JSONValue<GPType>>
+            export type C<GType> = pt.Dictionary<T.JSONValue<GType>>
         }
         
-        export type _lobject<GPType> = () => pt.Dictionary<T.JSONValue<GPType>>
+        export type _lobject<GType> = () => pt.Dictionary<T.JSONValue<GType>>
         
         export namespace _lstring {
             
-            export type C<GPType> = string
+            export type C<GType> = string
         }
         
-        export type _lstring<GPType> = () => string
+        export type _lstring<GType> = () => string
     }
     
-    export type JSONValue<GPType> = {
-        readonly 'array': () => pt.Array<T.JSONValue<GPType>>
+    export type JSONValue<GType> = {
+        readonly 'array': () => pt.Array<T.JSONValue<GType>>
         readonly 'boolean': () => boolean
         readonly 'isNull': boolean
         readonly 'number': () => number
-        readonly 'object': () => pt.Dictionary<T.JSONValue<GPType>>
+        readonly 'object': () => pt.Dictionary<T.JSONValue<GType>>
         readonly 'string': () => string
     }
     
     export namespace PossibleResult {
         
-        export type O<GPType> = GPType
+        export type O<GType> = GType
     }
     
-    export type PossibleResult<GPType> = [ false ] | [ true, GPType]
+    export type PossibleResult<GType> = [ false ] | [ true, GType]
     
-    export type Result<GPType> = GPType
+    export type Result<GType> = GType
 }
