@@ -13,7 +13,7 @@ export const $: mproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "functions to convert JSON data to Pareto types",
     'license': "TBD",
-    
+
     'dependencies': d({
         "glo-pareto-common": null,
     }),
@@ -29,25 +29,46 @@ export const $: mproject.T.Project<pd.SourceLocation> = {
                 'root': api,
                 'imports': d({
                     "common": external("glo-pareto-common"),
-                    "this":this_(),
+                    "this": this_(),
                 }),
             }
         },
-        'nativeDependencies': d({}),
-        'devDependencies': d({
-            "@types/node": null,
-        }),
+        'temp': {
+            'nativeDependencies': d({}),
+            'devDependencies': d({
+                "@types/node": null,
+            }),
+        },
         'test': {
             'dependencies': d({
             }),
-            'glossary': {
-                'parameters': d({}),
-                'types': d({}),
-                'builders': d({}),
-                'interfaces': d({}),
-                'functions': d({}),
+            'definition': {
+                'glossary': {
+                    'root': {
+                        'parameters': d({}),
+                        'imports': d({}),
+                        'types': d({}),
+                        'asynchronous': {
+                            'interfaces': d({}),
+                            'constructors': d({}),
+                            'functions': d({}),
+                        },
+                        'synchronous': {
+                            'interfaces': d({}),
+                            'constructors': d({}),
+                            'functions': d({}),
+                        },
+                    },
+                    'imports': d({}),
+                },
+                'api': {
+                    'root': {
+                        'algorithms': d({}),
+                    },
+                    'imports': d({}),
+                },
             },
             'imports': d({}),
-        }
+        },
     }],
 }
