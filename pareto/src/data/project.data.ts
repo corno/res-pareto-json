@@ -47,16 +47,17 @@ export const $: mproject.T.Project<pd.SourceLocation> = {
                     'root': {
                         'parameters': d({}),
                         'imports': d({}),
-                        'types': d({}),
+                        'root': {
+                            'namespaces': d({}),
+                            'types': d({}),
+                        },
                         'asynchronous': {
                             'interfaces': d({}),
-                            'constructors': d({}),
-                            'functions': d({}),
+                            'algorithms': d({}),
                         },
                         'synchronous': {
                             'interfaces': d({}),
-                            'constructors': d({}),
-                            'functions': d({}),
+                            'algorithms': d({}),
                         },
                     },
                     'imports': d({}),

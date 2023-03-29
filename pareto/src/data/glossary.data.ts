@@ -16,8 +16,8 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'root': {
         'namespaces': d({}),
         'types': d({
-            "PossibleResult": type(optional(glossaryParameter("Type"))),
-            "Result": type(glossaryParameter("Type")),
+            "PossibleResult": type(optional(ref(glossaryParameter("Type")))),
+            "Result": type(ref(glossaryParameter("Type"))),
             "JSONValue": type(group({
                 "object": member(computed(dictionary(ref(typeReference("JSONValue"))))),
                 "array": member(computed(array(ref(typeReference("JSONValue"))))),
@@ -30,18 +30,13 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     },
     'asynchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({
-
+        'algorithms': d({
             // "ConvertJSON": func(typeReference("common", "String"), null, null, data(typeReference("PossibleResult"), false)),
             // "Convert": func(typeReference("JSONValue"), null, null, data(typeReference("Result"), false)),
-
-
         }),
     },
     'synchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({}),
+        'algorithms': d({}),
     },
 }
